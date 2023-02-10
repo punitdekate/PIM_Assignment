@@ -549,6 +549,34 @@ return [
         '/admin/gdpr/pimcore-users/search-users' => [[['_route' => 'pimcore_admin_gdpr_pimcoreusers_searchusers', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\PimcoreUsersController::searchUsersAction'], null, ['GET' => 0], null, false, false, null]],
         '/admin/gdpr/pimcore-users/export-user-data' => [[['_route' => 'pimcore_admin_gdpr_pimcoreusers_exportuserdata', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\PimcoreUsersController::exportUserDataAction'], null, ['GET' => 0], null, false, false, null]],
         '/admin/gdpr/sent-mail/export' => [[['_route' => 'pimcore_admin_gdpr_sentmail_exportdataobject', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\SentMailController::exportDataObjectAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredatahub/config/list' => [[['_route' => 'pimcore_datahub_config_list', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::listAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/delete' => [[['_route' => 'pimcore_datahub_config_delete', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::deleteAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/add' => [[['_route' => 'pimcore_datahub_config_add', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::addAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/clone' => [[['_route' => 'pimcore_datahub_config_clone', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::cloneAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/get' => [[['_route' => 'pimcore_datahub_config_get', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::getAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/save' => [[['_route' => 'pimcore_datahub_config_save', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::saveAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/get-explorer-url' => [[['_route' => 'pimcore_datahub_config_getexplorerurl', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::getExplorerUrlAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/thumbnail-tree' => [[['_route' => 'pimcore_datahub_config_thumbnailtree', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::thumbnailTreeAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredatahub/config/permissions-users' => [[['_route' => 'pimcore_datahub_config_getpermissionusers', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\ConfigController::getPermissionUsersAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/save' => [[['_route' => 'pimcore_dataimporter_configdataobject_save', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::saveAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/get' => [[['_route' => 'pimcore_dataimporter_configdataobject_get', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::getAction'], null, null, null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/upload-preview' => [[['_route' => 'pimcore_dataimporter_configdataobject_uploadpreviewdata', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::uploadPreviewDataAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/copy-preview' => [[['_route' => 'pimcore_dataimporter_configdataobject_copypreviewdata', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::copyPreviewDataAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-preview-data' => [[['_route' => 'pimcore_dataimporter_configdataobject_loaddatapreview', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadDataPreviewAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-column-headers' => [[['_route' => 'pimcore_dataimporter_configdataobject_loadavailablecolumnheaders', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadAvailableColumnHeadersAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-transformation-result' => [[['_route' => 'pimcore_dataimporter_configdataobject_loadtransformationresultpreviews', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadTransformationResultPreviewsAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/calculate-transformation-result-type' => [[['_route' => 'pimcore_dataimporter_configdataobject_calculatetransformationresulttype', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::calculateTransformationResultTypeAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-class-attributes' => [[['_route' => 'pimcore_dataimporter_configdataobject_loaddataobjectattributes', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadDataObjectAttributesAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-class-classificationstore-attributes' => [[['_route' => 'pimcore_dataimporter_configdataobject_loaddataobjectclassificationstoreattributes', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadDataObjectClassificationStoreAttributesAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-class-classificationstore-keys' => [[['_route' => 'pimcore_dataimporter_configdataobject_loaddataobjectclassificationstorekeys', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadDataObjectClassificationStoreKeysAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-class-classificationstore-key-name' => [[['_route' => 'pimcore_dataimporter_configdataobject_loaddataobjectclassificationstorekeyname', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadDataObjectClassificationStoreKeyNameAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/start-import' => [[['_route' => 'pimcore_dataimporter_configdataobject_startbatchimport', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::startBatchImportAction'], null, ['PUT' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/check-import-progress' => [[['_route' => 'pimcore_dataimporter_configdataobject_checkimportprogress', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::checkImportProgressAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/check-crontab' => [[['_route' => 'pimcore_dataimporter_configdataobject_iscronexpressionvalid', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::isCronExpressionValidAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/cancel-execution' => [[['_route' => 'pimcore_dataimporter_configdataobject_cancelexecution', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::cancelExecutionAction'], null, ['PUT' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/upload-import-file' => [[['_route' => 'pimcore_dataimporter_configdataobject_uploadimportfile', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::uploadImportFileAction'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/has-import-file-uploaded' => [[['_route' => 'pimcore_dataimporter_configdataobject_hasimportfileuploaded', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::hasImportFileUploadedAction'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/pimcoredataimporter/dataobject/config/load-unit-data' => [[['_route' => 'pimcore_dataimporter_configdataobject_loadunitdata', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadUnitDataAction'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -582,6 +610,13 @@ return [
                         .'|s/(.*)(*:556)'
                     .')'
                 .')'
+                .'|/pimcore\\-(?'
+                    .'|datahub\\-(?'
+                        .'|webservices/explorer/([^/]++)(*:620)'
+                        .'|import/([\\w-]+)/push(*:648)'
+                    .')'
+                    .'|graphql\\-webservices/([^/]++)(*:686)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -600,8 +635,11 @@ return [
         459 => [[['_route' => 'pimcore_admin_dataobject_dataobject_diffversions', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\DataObject\\DataObjectController::diffVersionsAction'], ['from', 'to'], ['GET' => 0], null, false, true, null]],
         510 => [[['_route' => 'pimcore_admin_document_document_diffversions', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\Document\\DocumentController::diffVersionsAction'], ['from', 'to'], ['GET' => 0], null, false, true, null]],
         542 => [[['_route' => 'pimcore_admin_external_adminer_proxy', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\External\\AdminerController::proxyAction'], ['path'], null, null, false, true, null]],
-        556 => [
-            [['_route' => 'pimcore_admin_external_adminer_proxy_2', 'type' => 'external', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\External\\AdminerController::proxyAction'], ['path'], null, null, false, true, null],
+        556 => [[['_route' => 'pimcore_admin_external_adminer_proxy_2', 'type' => 'external', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\External\\AdminerController::proxyAction'], ['path'], null, null, false, true, null]],
+        620 => [[['_route' => 'admin_pimcoredatahub_config', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\GraphQLExplorerController::explorerAction'], ['clientname'], null, null, false, true, null]],
+        648 => [[['_route' => 'data_hub_data_importer_push', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\PushImportController::pushAction'], ['config'], ['POST' => 0], null, false, false, null]],
+        686 => [
+            [['_route' => 'admin_pimcoredatahub_webservice', '_controller' => 'Pimcore\\Bundle\\DataHubBundle\\Controller\\WebserviceController::webonyxAction'], ['clientname'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

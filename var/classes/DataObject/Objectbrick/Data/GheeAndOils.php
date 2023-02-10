@@ -3,17 +3,17 @@
 /**
  * Fields Summary:
  * - ModelName [input]
- * - OilType [input]
+ * - OilType [select]
  * - Quantity [quantityValue]
  * - UsedFor [input]
  * - ProcessingType [input]
  * - MaximumShelfLife [input]
  * - FoodPreference [input]
- * - ContainerType [input]
  * - Organic [booleanSelect]
  * - AddedPreservatives [input]
  * - Ingredients [input]
  * - Nutrient [input]
+ * - ContainerType [select]
  */
 
 namespace Pimcore\Model\DataObject\Objectbrick\Data;
@@ -33,11 +33,11 @@ protected $UsedFor;
 protected $ProcessingType;
 protected $MaximumShelfLife;
 protected $FoodPreference;
-protected $ContainerType;
 protected $Organic;
 protected $AddedPreservatives;
 protected $Ingredients;
 protected $Nutrient;
+protected $ContainerType;
 
 
 /**
@@ -283,39 +283,6 @@ public function setFoodPreference (?string $FoodPreference)
 }
 
 /**
-* Get ContainerType - ContainerType
-* @return string|null
-*/
-public function getContainerType(): ?string
-{
-	$data = $this->ContainerType;
-	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("ContainerType")->isEmpty($data)) {
-		try {
-			return $this->getValueFromParent("ContainerType");
-		} catch (InheritanceParentNotFoundException $e) {
-			// no data from parent available, continue ...
-		}
-	}
-	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
-		return $data->getPlain();
-	}
-
-	return $data;
-}
-
-/**
-* Set ContainerType - ContainerType
-* @param string|null $ContainerType
-* @return \Pimcore\Model\DataObject\Objectbrick\Data\GheeAndOils
-*/
-public function setContainerType (?string $ContainerType)
-{
-	$this->ContainerType = $ContainerType;
-
-	return $this;
-}
-
-/**
 * Get Organic - Organic
 * @return bool|null
 */
@@ -443,6 +410,39 @@ public function getNutrient(): ?string
 public function setNutrient (?string $Nutrient)
 {
 	$this->Nutrient = $Nutrient;
+
+	return $this;
+}
+
+/**
+* Get ContainerType - Container Type
+* @return string|null
+*/
+public function getContainerType(): ?string
+{
+	$data = $this->ContainerType;
+	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("ContainerType")->isEmpty($data)) {
+		try {
+			return $this->getValueFromParent("ContainerType");
+		} catch (InheritanceParentNotFoundException $e) {
+			// no data from parent available, continue ...
+		}
+	}
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set ContainerType - Container Type
+* @param string|null $ContainerType
+* @return \Pimcore\Model\DataObject\Objectbrick\Data\GheeAndOils
+*/
+public function setContainerType (?string $ContainerType)
+{
+	$this->ContainerType = $ContainerType;
 
 	return $this;
 }

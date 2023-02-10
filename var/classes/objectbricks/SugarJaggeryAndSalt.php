@@ -3,14 +3,14 @@
 /**
  * Fields Summary:
  * - ModelName [input]
- * - ProductType [input]
+ * - ProductType [select]
  * - Quantity [quantityValue]
  * - MaximumShelfLife [input]
  * - Nutrient [input]
- * - ContainerType [input]
  * - Form [input]
  * - Organic [booleanSelect]
  * - DietaryPreferance [booleanSelect]
+ * - ContainerType [select]
  */
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
@@ -19,7 +19,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
-   'group' => '',
+   'group' => 'Staples',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => NULL,
@@ -82,7 +82,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
              'name' => 'ProductType',
              'title' => 'ProductType',
              'tooltip' => '',
@@ -93,7 +93,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'input',
+             'fieldtype' => 'select',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -102,14 +102,11 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             array (
             ),
              'width' => '',
-             'defaultValue' => NULL,
+             'defaultValue' => 'db_value_1',
+             'optionsProviderClass' => 'App\\DynamicDropdown\\Sugartype',
+             'optionsProviderData' => '',
              'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
+             'dynamicOptions' => false,
              'defaultValueGenerator' => '',
           )),
           2 => 
@@ -138,6 +135,12 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'defaultUnit' => NULL,
              'validUnits' => 
             array (
+              0 => '1',
+              1 => '2',
+              2 => '3',
+              3 => '4',
+              4 => '5',
+              5 => '6',
             ),
              'integer' => false,
              'unsigned' => false,
@@ -213,37 +216,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
           )),
           5 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'ContainerType',
-             'title' => 'ContainerType',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'input',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'width' => '',
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'defaultValueGenerator' => '',
-          )),
-          6 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'Form',
              'title' => 'Form',
              'tooltip' => '',
@@ -273,7 +245,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
-          7 => 
+          6 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
              'name' => 'Organic',
              'title' => 'Organic',
@@ -316,7 +288,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'width' => '',
           )),
-          8 => 
+          7 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
              'name' => 'DietaryPreferance',
              'title' => 'Dietary Preferance',
@@ -359,6 +331,62 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'width' => '',
           )),
+          8 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'ContainerType',
+             'title' => 'Container Type',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'select',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'Plastics.',
+                'value' => 'Plastics.',
+              ),
+              1 => 
+              array (
+                'key' => 'Box',
+                'value' => 'Box',
+              ),
+              2 => 
+              array (
+                'key' => 'Metal cans.',
+                'value' => 'Metal cans.',
+              ),
+              3 => 
+              array (
+                'key' => 'Vacuum pouches',
+                'value' => 'Vacuum pouches',
+              ),
+              4 => 
+              array (
+                'key' => 'Glass jars.',
+                'value' => 'Glass jars.',
+              ),
+            ),
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
+          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -391,8 +419,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
   array (
     0 => 
     array (
-      'classname' => 'Staples',
-      'fieldname' => 'SaltSugarAndJaggery',
+      'classname' => 'Grocery',
+      'fieldname' => 'FoodCategory',
     ),
   ),
 ));

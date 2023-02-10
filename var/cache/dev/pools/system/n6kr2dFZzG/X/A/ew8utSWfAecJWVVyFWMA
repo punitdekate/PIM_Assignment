@@ -1,0 +1,3 @@
+<?php //Pimcore%255CBundle%255CDataImporterBundle%255CController%255CConfigDataObjectController%2523getImportFilePath
+
+return [PHP_INT_MAX, []];

@@ -3,13 +3,13 @@
 /**
  * Fields Summary:
  * - ModelName [input]
- * - RiceType [input]
- * - Quantity [quantityValue]
+ * - RiceType [select]
  * - Color [select]
+ * - Quantity [quantityValue]
  * - GrainSize [slider]
  * - MaximumShelfLife [input]
  * - Nutrient [input]
- * - Container [input]
+ * - ContainerType [select]
  */
 
 namespace Pimcore\Model\DataObject\Objectbrick\Data;
@@ -24,12 +24,12 @@ class RiceAndRiceProducts extends DataObject\Objectbrick\Data\AbstractData
 protected $type = "RiceAndRiceProducts";
 protected $ModelName;
 protected $RiceType;
-protected $Quantity;
 protected $Color;
+protected $Quantity;
 protected $GrainSize;
 protected $MaximumShelfLife;
 protected $Nutrient;
-protected $Container;
+protected $ContainerType;
 
 
 /**
@@ -110,39 +110,6 @@ public function setRiceType (?string $RiceType)
 }
 
 /**
-* Get Quantity - Quantity
-* @return \Pimcore\Model\DataObject\Data\QuantityValue|null
-*/
-public function getQuantity(): ?\Pimcore\Model\DataObject\Data\QuantityValue
-{
-	$data = $this->Quantity;
-	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("Quantity")->isEmpty($data)) {
-		try {
-			return $this->getValueFromParent("Quantity");
-		} catch (InheritanceParentNotFoundException $e) {
-			// no data from parent available, continue ...
-		}
-	}
-	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
-		return $data->getPlain();
-	}
-
-	return $data;
-}
-
-/**
-* Set Quantity - Quantity
-* @param \Pimcore\Model\DataObject\Data\QuantityValue|null $Quantity
-* @return \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts
-*/
-public function setQuantity (?\Pimcore\Model\DataObject\Data\QuantityValue $Quantity)
-{
-	$this->Quantity = $Quantity;
-
-	return $this;
-}
-
-/**
 * Get Color - Color
 * @return string|null
 */
@@ -171,6 +138,39 @@ public function getColor(): ?string
 public function setColor (?string $Color)
 {
 	$this->Color = $Color;
+
+	return $this;
+}
+
+/**
+* Get Quantity - Quantity
+* @return \Pimcore\Model\DataObject\Data\QuantityValue|null
+*/
+public function getQuantity(): ?\Pimcore\Model\DataObject\Data\QuantityValue
+{
+	$data = $this->Quantity;
+	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("Quantity")->isEmpty($data)) {
+		try {
+			return $this->getValueFromParent("Quantity");
+		} catch (InheritanceParentNotFoundException $e) {
+			// no data from parent available, continue ...
+		}
+	}
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set Quantity - Quantity
+* @param \Pimcore\Model\DataObject\Data\QuantityValue|null $Quantity
+* @return \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts
+*/
+public function setQuantity (?\Pimcore\Model\DataObject\Data\QuantityValue $Quantity)
+{
+	$this->Quantity = $Quantity;
 
 	return $this;
 }
@@ -275,15 +275,15 @@ public function setNutrient (?string $Nutrient)
 }
 
 /**
-* Get Container - Container
+* Get ContainerType - Container Type
 * @return string|null
 */
-public function getContainer(): ?string
+public function getContainerType(): ?string
 {
-	$data = $this->Container;
-	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("Container")->isEmpty($data)) {
+	$data = $this->ContainerType;
+	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("ContainerType")->isEmpty($data)) {
 		try {
-			return $this->getValueFromParent("Container");
+			return $this->getValueFromParent("ContainerType");
 		} catch (InheritanceParentNotFoundException $e) {
 			// no data from parent available, continue ...
 		}
@@ -296,13 +296,13 @@ public function getContainer(): ?string
 }
 
 /**
-* Set Container - Container
-* @param string|null $Container
+* Set ContainerType - Container Type
+* @param string|null $ContainerType
 * @return \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts
 */
-public function setContainer (?string $Container)
+public function setContainerType (?string $ContainerType)
 {
-	$this->Container = $Container;
+	$this->ContainerType = $ContainerType;
 
 	return $this;
 }
