@@ -91,30 +91,6 @@ public function filterByMainImage ($data, $operator = '=')
 }
 
 /**
-* Filter by SellerRelation (Seller Relation)
-* @param mixed $data
-* @param string $operator SQL comparison operator, e.g. =, <, >= etc. You can use "?" as placeholder, e.g. "IN (?)"
-* @return static
-*/
-public function filterBySellerRelation ($data, $operator = '=')
-{
-	$this->getClass()->getFieldDefinition("SellerRelation")->addListingFilter($this, $data, $operator);
-	return $this;
-}
-
-/**
-* Filter by PackerRelation (Packer Relation)
-* @param mixed $data
-* @param string $operator SQL comparison operator, e.g. =, <, >= etc. You can use "?" as placeholder, e.g. "IN (?)"
-* @return static
-*/
-public function filterByPackerRelation ($data, $operator = '=')
-{
-	$this->getClass()->getFieldDefinition("PackerRelation")->addListingFilter($this, $data, $operator);
-	return $this;
-}
-
-/**
 * Filter by ManufacutureDate (Manufacuture Date)
 * @param string|int|float|array|Model\Element\ElementInterface $data  comparison data, can be scalar or array (if operator is e.g. "IN (?)")
 * @param string $operator  SQL comparison operator, e.g. =, <, >= etc. You can use "?" as placeholder, e.g. "IN (?)"
@@ -147,6 +123,30 @@ public function filterByExpiryDate ($data, $operator = '=')
 public function filterByManufactureRelation ($data, $operator = '=')
 {
 	$this->getClass()->getFieldDefinition("ManufactureRelation")->addListingFilter($this, $data, $operator);
+	return $this;
+}
+
+/**
+* Filter by SellerRelation (Seller Relation)
+* @param mixed $data
+* @param string $operator SQL comparison operator, e.g. =, <, >= etc. You can use "?" as placeholder, e.g. "IN (?)"
+* @return static
+*/
+public function filterBySellerRelation ($data, $operator = '=')
+{
+	$this->getClass()->getFieldDefinition("SellerRelation")->addListingFilter($this, $data, $operator);
+	return $this;
+}
+
+/**
+* Filter by PackerRelation (Packer Relation)
+* @param mixed $data
+* @param string $operator SQL comparison operator, e.g. =, <, >= etc. You can use "?" as placeholder, e.g. "IN (?)"
+* @return static
+*/
+public function filterByPackerRelation ($data, $operator = '=')
+{
+	$this->getClass()->getFieldDefinition("PackerRelation")->addListingFilter($this, $data, $operator);
 	return $this;
 }
 

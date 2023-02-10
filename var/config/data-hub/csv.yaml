@@ -1,0 +1,13 @@
+pimcore_data_hub:
+    configurations:
+        csv:
+            general:
+                type: dataImporterDataObject
+                path: null
+                name: csv
+                modificationDate: 1676022018
+                createDate: 1676022018
+            workspaces: {  }
+            permissions:
+                user: {  }
+                role: {  }

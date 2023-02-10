@@ -16,11 +16,11 @@
  * - Category [manyToManyObjectRelation]
  * - MainImage [image]
  * - genricImage [imageGallery]
- * - SellerRelation [manyToManyObjectRelation]
- * - PackerRelation [manyToManyObjectRelation]
  * - ManufacutureDate [date]
  * - ExpiryDate [date]
  * - ManufactureRelation [manyToOneRelation]
+ * - SellerRelation [manyToManyObjectRelation]
+ * - PackerRelation [manyToManyObjectRelation]
  */
 
 namespace Pimcore\Model\DataObject;
@@ -37,11 +37,11 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 * @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByFoodType($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByCategory($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByMainImage($value, $limit = 0, $offset = 0, $objectTypes = null)
-* @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getBySellerRelation($value, $limit = 0, $offset = 0, $objectTypes = null)
-* @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByPackerRelation($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByManufacutureDate($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByExpiryDate($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByManufactureRelation($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getBySellerRelation($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Grocery\Listing|\Pimcore\Model\DataObject\Grocery|null getByPackerRelation($value, $limit = 0, $offset = 0, $objectTypes = null)
 */
 
 class Grocery extends Concrete
@@ -57,11 +57,11 @@ protected $ShelfLife;
 protected $Category;
 protected $MainImage;
 protected $genricImage;
-protected $SellerRelation;
-protected $PackerRelation;
 protected $ManufacutureDate;
 protected $ExpiryDate;
 protected $ManufactureRelation;
+protected $SellerRelation;
+protected $PackerRelation;
 
 
 /**
@@ -536,114 +536,6 @@ public function setGenricImage(?\Pimcore\Model\DataObject\Data\ImageGallery $gen
 }
 
 /**
-* Get SellerRelation - Seller Relation
-* @return \Pimcore\Model\DataObject\Seller[]
-*/
-public function getSellerRelation(): array
-{
-	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("SellerRelation");
-		if ($preValue !== null) {
-			return $preValue;
-		}
-	}
-
-	$data = $this->getClass()->getFieldDefinition("SellerRelation")->preGetData($this);
-
-	if (\Pimcore\Model\DataObject::doGetInheritedValues() && $this->getClass()->getFieldDefinition("SellerRelation")->isEmpty($data)) {
-		try {
-			return $this->getValueFromParent("SellerRelation");
-		} catch (InheritanceParentNotFoundException $e) {
-			// no data from parent available, continue ...
-		}
-	}
-
-	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
-		return $data->getPlain();
-	}
-
-	return $data;
-}
-
-/**
-* Set SellerRelation - Seller Relation
-* @param \Pimcore\Model\DataObject\Seller[] $SellerRelation
-* @return \Pimcore\Model\DataObject\Grocery
-*/
-public function setSellerRelation(?array $SellerRelation)
-{
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation $fd */
-	$fd = $this->getClass()->getFieldDefinition("SellerRelation");
-	$inheritValues = self::getGetInheritedValues();
-	self::setGetInheritedValues(false);
-	$hideUnpublished = \Pimcore\Model\DataObject\Concrete::getHideUnpublished();
-	\Pimcore\Model\DataObject\Concrete::setHideUnpublished(false);
-	$currentData = $this->getSellerRelation();
-	\Pimcore\Model\DataObject\Concrete::setHideUnpublished($hideUnpublished);
-	self::setGetInheritedValues($inheritValues);
-	$isEqual = $fd->isEqual($currentData, $SellerRelation);
-	if (!$isEqual) {
-		$this->markFieldDirty("SellerRelation", true);
-	}
-	$this->SellerRelation = $fd->preSetData($this, $SellerRelation);
-	return $this;
-}
-
-/**
-* Get PackerRelation - Packer Relation
-* @return \Pimcore\Model\DataObject\Packer[]
-*/
-public function getPackerRelation(): array
-{
-	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("PackerRelation");
-		if ($preValue !== null) {
-			return $preValue;
-		}
-	}
-
-	$data = $this->getClass()->getFieldDefinition("PackerRelation")->preGetData($this);
-
-	if (\Pimcore\Model\DataObject::doGetInheritedValues() && $this->getClass()->getFieldDefinition("PackerRelation")->isEmpty($data)) {
-		try {
-			return $this->getValueFromParent("PackerRelation");
-		} catch (InheritanceParentNotFoundException $e) {
-			// no data from parent available, continue ...
-		}
-	}
-
-	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
-		return $data->getPlain();
-	}
-
-	return $data;
-}
-
-/**
-* Set PackerRelation - Packer Relation
-* @param \Pimcore\Model\DataObject\Packer[] $PackerRelation
-* @return \Pimcore\Model\DataObject\Grocery
-*/
-public function setPackerRelation(?array $PackerRelation)
-{
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation $fd */
-	$fd = $this->getClass()->getFieldDefinition("PackerRelation");
-	$inheritValues = self::getGetInheritedValues();
-	self::setGetInheritedValues(false);
-	$hideUnpublished = \Pimcore\Model\DataObject\Concrete::getHideUnpublished();
-	\Pimcore\Model\DataObject\Concrete::setHideUnpublished(false);
-	$currentData = $this->getPackerRelation();
-	\Pimcore\Model\DataObject\Concrete::setHideUnpublished($hideUnpublished);
-	self::setGetInheritedValues($inheritValues);
-	$isEqual = $fd->isEqual($currentData, $PackerRelation);
-	if (!$isEqual) {
-		$this->markFieldDirty("PackerRelation", true);
-	}
-	$this->PackerRelation = $fd->preSetData($this, $PackerRelation);
-	return $this;
-}
-
-/**
 * Get ManufacutureDate - Manufacuture Date
 * @return \Carbon\Carbon|null
 */
@@ -778,6 +670,114 @@ public function setManufactureRelation(?\Pimcore\Model\Element\AbstractElement $
 		$this->markFieldDirty("ManufactureRelation", true);
 	}
 	$this->ManufactureRelation = $fd->preSetData($this, $ManufactureRelation);
+	return $this;
+}
+
+/**
+* Get SellerRelation - Seller Relation
+* @return \Pimcore\Model\DataObject\Seller[]
+*/
+public function getSellerRelation(): array
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("SellerRelation");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->getClass()->getFieldDefinition("SellerRelation")->preGetData($this);
+
+	if (\Pimcore\Model\DataObject::doGetInheritedValues() && $this->getClass()->getFieldDefinition("SellerRelation")->isEmpty($data)) {
+		try {
+			return $this->getValueFromParent("SellerRelation");
+		} catch (InheritanceParentNotFoundException $e) {
+			// no data from parent available, continue ...
+		}
+	}
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set SellerRelation - Seller Relation
+* @param \Pimcore\Model\DataObject\Seller[] $SellerRelation
+* @return \Pimcore\Model\DataObject\Grocery
+*/
+public function setSellerRelation(?array $SellerRelation)
+{
+	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation $fd */
+	$fd = $this->getClass()->getFieldDefinition("SellerRelation");
+	$inheritValues = self::getGetInheritedValues();
+	self::setGetInheritedValues(false);
+	$hideUnpublished = \Pimcore\Model\DataObject\Concrete::getHideUnpublished();
+	\Pimcore\Model\DataObject\Concrete::setHideUnpublished(false);
+	$currentData = $this->getSellerRelation();
+	\Pimcore\Model\DataObject\Concrete::setHideUnpublished($hideUnpublished);
+	self::setGetInheritedValues($inheritValues);
+	$isEqual = $fd->isEqual($currentData, $SellerRelation);
+	if (!$isEqual) {
+		$this->markFieldDirty("SellerRelation", true);
+	}
+	$this->SellerRelation = $fd->preSetData($this, $SellerRelation);
+	return $this;
+}
+
+/**
+* Get PackerRelation - Packer Relation
+* @return \Pimcore\Model\DataObject\Packer[]
+*/
+public function getPackerRelation(): array
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("PackerRelation");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->getClass()->getFieldDefinition("PackerRelation")->preGetData($this);
+
+	if (\Pimcore\Model\DataObject::doGetInheritedValues() && $this->getClass()->getFieldDefinition("PackerRelation")->isEmpty($data)) {
+		try {
+			return $this->getValueFromParent("PackerRelation");
+		} catch (InheritanceParentNotFoundException $e) {
+			// no data from parent available, continue ...
+		}
+	}
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set PackerRelation - Packer Relation
+* @param \Pimcore\Model\DataObject\Packer[] $PackerRelation
+* @return \Pimcore\Model\DataObject\Grocery
+*/
+public function setPackerRelation(?array $PackerRelation)
+{
+	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation $fd */
+	$fd = $this->getClass()->getFieldDefinition("PackerRelation");
+	$inheritValues = self::getGetInheritedValues();
+	self::setGetInheritedValues(false);
+	$hideUnpublished = \Pimcore\Model\DataObject\Concrete::getHideUnpublished();
+	\Pimcore\Model\DataObject\Concrete::setHideUnpublished(false);
+	$currentData = $this->getPackerRelation();
+	\Pimcore\Model\DataObject\Concrete::setHideUnpublished($hideUnpublished);
+	self::setGetInheritedValues($inheritValues);
+	$isEqual = $fd->isEqual($currentData, $PackerRelation);
+	if (!$isEqual) {
+		$this->markFieldDirty("PackerRelation", true);
+	}
+	$this->PackerRelation = $fd->preSetData($this, $PackerRelation);
 	return $this;
 }
 

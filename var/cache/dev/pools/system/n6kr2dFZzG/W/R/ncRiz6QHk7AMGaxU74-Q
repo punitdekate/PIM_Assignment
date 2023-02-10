@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CDataObject%255COwnerAwareFieldInterface
+
+return [PHP_INT_MAX, []];

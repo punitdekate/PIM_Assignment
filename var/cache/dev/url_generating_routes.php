@@ -569,4 +569,5 @@ return [
     'pimcore_dataimporter_configdataobject_hasimportfileuploaded' => [[], ['_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::hasImportFileUploadedAction'], [], [['text', '/admin/pimcoredataimporter/dataobject/config/has-import-file-uploaded']], [], [], []],
     'pimcore_dataimporter_configdataobject_loadunitdata' => [[], ['_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadUnitDataAction'], [], [['text', '/admin/pimcoredataimporter/dataobject/config/load-unit-data']], [], [], []],
     'data_hub_data_importer_push' => [['config'], ['_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\PushImportController::pushAction'], ['config' => '[\\w-]+'], [['text', '/push'], ['variable', '/', '[\\w-]+', 'config', true], ['text', '/pimcore-datahub-import']], [], [], []],
+    'app_default_grocerieslist' => [[], ['_controller' => 'App\\Controller\\DefaultController::grocerieslist'], [], [['text', '/test']], [], [], []],
 ];

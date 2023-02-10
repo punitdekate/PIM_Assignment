@@ -16,11 +16,11 @@
  * - Category [manyToManyObjectRelation]
  * - MainImage [image]
  * - genricImage [imageGallery]
- * - SellerRelation [manyToManyObjectRelation]
- * - PackerRelation [manyToManyObjectRelation]
  * - ManufacutureDate [date]
  * - ExpiryDate [date]
  * - ManufactureRelation [manyToOneRelation]
+ * - SellerRelation [manyToManyObjectRelation]
+ * - PackerRelation [manyToManyObjectRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -29,7 +29,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Grocery',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1675972979,
+   'modificationDate' => 1676012321,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -586,138 +586,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
-             'region' => 'east',
-             'title' => 'SellerInfo',
-             'width' => 700,
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'permissions' => NULL,
-             'children' => 
-            array (
-              0 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'SellerRelation',
-                 'title' => 'Seller Relation',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'fieldtype' => 'manyToManyObjectRelation',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Seller',
-                  ),
-                ),
-                 'pathFormatterClass' => '',
-                 'width' => '',
-                 'height' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'id,fullpath,classname',
-                 'allowToCreateNewObject' => false,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-              )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'panel',
-             'layout' => NULL,
-             'border' => false,
-             'icon' => '',
-             'labelWidth' => 0,
-             'labelAlign' => 'left',
-          )),
-          4 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
-             'region' => 'west',
-             'title' => 'PackerRelation',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'permissions' => NULL,
-             'children' => 
-            array (
-              0 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'PackerRelation',
-                 'title' => 'Packer Relation',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'fieldtype' => 'manyToManyObjectRelation',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Packer',
-                  ),
-                ),
-                 'pathFormatterClass' => '',
-                 'width' => '',
-                 'height' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'id,fullpath,classname,PackerId,PackerName',
-                 'allowToCreateNewObject' => false,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-              )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'panel',
-             'layout' => NULL,
-             'border' => false,
-             'icon' => '',
-             'labelWidth' => 0,
-             'labelAlign' => 'left',
-          )),
-          5 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
              'region' => 'north',
              'title' => 'ManufactureInfo',
              'width' => '',
@@ -832,6 +700,161 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'icon' => '',
              'labelWidth' => 0,
              'labelAlign' => 'left',
+          )),
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Layout\Region::__set_state(array(
+             'name' => 'Layout',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => 'Seller and Packer',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => '',
+             'datatype' => 'layout',
+             'permissions' => NULL,
+             'children' => 
+            array (
+              0 => 
+              Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+                 'name' => 'Layout',
+                 'type' => NULL,
+                 'region' => 'east',
+                 'title' => 'SellerRealtion',
+                 'width' => 700,
+                 'height' => 200,
+                 'collapsible' => false,
+                 'collapsed' => false,
+                 'bodyStyle' => '',
+                 'datatype' => 'layout',
+                 'permissions' => NULL,
+                 'children' => 
+                array (
+                  0 => 
+                  Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                     'name' => 'SellerRelation',
+                     'title' => 'Seller Relation',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'datatype' => 'data',
+                     'fieldtype' => 'manyToManyObjectRelation',
+                     'relationType' => true,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'classes' => 
+                    array (
+                      0 => 
+                      array (
+                        'classes' => 'Seller',
+                      ),
+                    ),
+                     'pathFormatterClass' => '',
+                     'width' => '',
+                     'height' => '',
+                     'maxItems' => NULL,
+                     'visibleFields' => 'id,fullpath,classname',
+                     'allowToCreateNewObject' => false,
+                     'optimizedAdminLoading' => false,
+                     'enableTextSelection' => false,
+                     'visibleFieldDefinitions' => 
+                    array (
+                    ),
+                  )),
+                ),
+                 'locked' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'fieldtype' => 'panel',
+                 'layout' => NULL,
+                 'border' => true,
+                 'icon' => '',
+                 'labelWidth' => 0,
+                 'labelAlign' => 'left',
+              )),
+              1 => 
+              Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+                 'name' => 'Layout',
+                 'type' => NULL,
+                 'region' => 'west',
+                 'title' => 'packerRelation',
+                 'width' => 700,
+                 'height' => 200,
+                 'collapsible' => false,
+                 'collapsed' => false,
+                 'bodyStyle' => '',
+                 'datatype' => 'layout',
+                 'permissions' => NULL,
+                 'children' => 
+                array (
+                  0 => 
+                  Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                     'name' => 'PackerRelation',
+                     'title' => 'Packer Relation',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'datatype' => 'data',
+                     'fieldtype' => 'manyToManyObjectRelation',
+                     'relationType' => true,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'classes' => 
+                    array (
+                      0 => 
+                      array (
+                        'classes' => 'Packer',
+                      ),
+                    ),
+                     'pathFormatterClass' => '',
+                     'width' => '',
+                     'height' => '',
+                     'maxItems' => NULL,
+                     'visibleFields' => 'id,fullpath,classname,PackerId,PackerName',
+                     'allowToCreateNewObject' => false,
+                     'optimizedAdminLoading' => false,
+                     'enableTextSelection' => false,
+                     'visibleFieldDefinitions' => 
+                    array (
+                    ),
+                  )),
+                ),
+                 'locked' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'fieldtype' => 'panel',
+                 'layout' => NULL,
+                 'border' => true,
+                 'icon' => '',
+                 'labelWidth' => 0,
+                 'labelAlign' => 'left',
+              )),
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'region',
+             'icon' => '',
           )),
         ),
          'locked' => false,

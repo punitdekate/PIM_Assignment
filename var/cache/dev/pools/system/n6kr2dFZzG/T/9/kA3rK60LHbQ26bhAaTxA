@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CVersion%2523getBinaryFileHash
+
+return [PHP_INT_MAX, []];

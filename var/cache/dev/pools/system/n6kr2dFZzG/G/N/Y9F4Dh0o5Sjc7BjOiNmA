@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CVersion%2524activeDispatchingEvents
+
+return [PHP_INT_MAX, []];
