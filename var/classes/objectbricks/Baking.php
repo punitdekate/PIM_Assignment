@@ -189,8 +189,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'defaultUnit' => NULL,
              'validUnits' => 
             array (
-              0 => 'ml',
-              1 => 'G',
+              0 => '3',
+              1 => '1',
             ),
              'integer' => false,
              'unsigned' => false,

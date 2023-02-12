@@ -1,0 +1,38 @@
+pimcore:
+    custom_report:
+        definitions:
+            grocery_report:
+                name: grocery_report
+                sql: ''
+                dataSourceConfig:
+                    -
+                        sql: 'count(*)'
+                        from: object_1
+                        where: ''
+                        groupby: Category
+                        type: sql
+                columnConfiguration:
+                    -
+                        name: 'count(*)'
+                        display: true
+                        export: true
+                        order: true
+                        width: ''
+                        label: ''
+                        id: extModel9423-2
+                niceName: ''
+                group: ''
+                groupIconClass: ''
+                iconClass: ''
+                menuShortcut: true
+                reportClass: ''
+                chartType: pie
+                pieColumn: 'count(*)'
+                pieLabelColumn: null
+                xAxis: null
+                yAxis: {  }
+                modificationDate: 1676026791
+                creationDate: 1676023990
+                shareGlobally: true
+                sharedUserNames: {  }
+                sharedRoleNames: {  }

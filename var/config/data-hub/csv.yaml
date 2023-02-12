@@ -2,12 +2,61 @@ pimcore_data_hub:
     configurations:
         csv:
             general:
+                active: true
                 type: dataImporterDataObject
-                path: null
                 name: csv
-                modificationDate: 1676022018
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1676206764
                 createDate: 1676022018
-            workspaces: {  }
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: /export.csv
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ;
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: '17'
+                loadingStrategy:
+                    type: notLoad
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /MasterData/category
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangeUnpublishNew
+            processingConfig:
+                executionType: sequential
+                doArchiveImportFile: true
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: '01'
+                    dataSourceIndex:
+                        - '1'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: CategoryType
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: job
+                cronDefinition: ''
+                scheduledAt: '12-02-2023 18:28'
             permissions:
                 user: {  }
                 role: {  }
+            workspaces: {  }

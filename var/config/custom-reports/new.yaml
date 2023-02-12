@@ -1,0 +1,38 @@
+pimcore:
+    custom_report:
+        definitions:
+            new:
+                name: new
+                sql: ''
+                dataSourceConfig:
+                    -
+                        sql: 'count(*)'
+                        from: object_1
+                        where: ''
+                        groupby: category
+                        type: sql
+                columnConfiguration:
+                    -
+                        name: 'count(*)'
+                        display: true
+                        export: true
+                        order: true
+                        width: ''
+                        label: ''
+                        id: extModel344-1
+                niceName: ''
+                group: ''
+                groupIconClass: ''
+                iconClass: ''
+                menuShortcut: true
+                reportClass: ''
+                chartType: pie
+                pieColumn: 'count(*)'
+                pieLabelColumn: null
+                xAxis: null
+                yAxis: {  }
+                modificationDate: 1676028909
+                creationDate: 1676028763
+                shareGlobally: true
+                sharedUserNames: {  }
+                sharedRoleNames: {  }

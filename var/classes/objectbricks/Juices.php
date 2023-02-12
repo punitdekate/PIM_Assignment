@@ -252,8 +252,8 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'defaultUnit' => NULL,
              'validUnits' => 
             array (
-              0 => '1',
-              1 => '3',
+              0 => '4',
+              1 => '2',
             ),
              'integer' => false,
              'unsigned' => false,

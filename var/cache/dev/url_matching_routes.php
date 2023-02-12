@@ -577,7 +577,8 @@ return [
         '/admin/pimcoredataimporter/dataobject/config/upload-import-file' => [[['_route' => 'pimcore_dataimporter_configdataobject_uploadimportfile', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::uploadImportFileAction'], null, ['POST' => 0], null, false, false, null]],
         '/admin/pimcoredataimporter/dataobject/config/has-import-file-uploaded' => [[['_route' => 'pimcore_dataimporter_configdataobject_hasimportfileuploaded', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::hasImportFileUploadedAction'], null, ['GET' => 0], null, false, false, null]],
         '/admin/pimcoredataimporter/dataobject/config/load-unit-data' => [[['_route' => 'pimcore_dataimporter_configdataobject_loadunitdata', '_controller' => 'Pimcore\\Bundle\\DataImporterBundle\\Controller\\ConfigDataObjectController::loadUnitDataAction'], null, ['GET' => 0], null, false, false, null]],
-        '/test' => [[['_route' => 'app_default_grocerieslist', '_controller' => 'App\\Controller\\DefaultController::grocerieslist'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/test' => [[['_route' => 'app_default_snacksapi', '_controller' => 'App\\Controller\\DefaultController::snacksApi'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/Beverages' => [[['_route' => 'beveragesApi', '_controller' => 'App\\Controller\\DefaultController::beveragesApi'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

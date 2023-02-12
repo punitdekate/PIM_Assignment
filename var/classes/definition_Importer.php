@@ -15,7 +15,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Importer',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1675940136,
+   'modificationDate' => 1676036600,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',

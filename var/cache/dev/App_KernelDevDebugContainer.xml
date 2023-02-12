@@ -647,7 +647,88 @@
           <parameter key="sql">pimcore.custom_report.adapter.factory.sql</parameter>
           <parameter key="analytics">pimcore.custom_report.adapter.factory.analytics</parameter>
         </parameter>
-        <parameter key="definitions" type="collection"/>
+        <parameter key="definitions" type="collection">
+          <parameter key="grocery_report" type="collection">
+            <parameter key="name">grocery_report</parameter>
+            <parameter key="sql"></parameter>
+            <parameter key="dataSourceConfig" type="collection">
+              <parameter type="collection">
+                <parameter key="sql">count(*)</parameter>
+                <parameter key="from">object_1</parameter>
+                <parameter key="where"></parameter>
+                <parameter key="groupby">Category</parameter>
+                <parameter key="type">sql</parameter>
+              </parameter>
+            </parameter>
+            <parameter key="columnConfiguration" type="collection">
+              <parameter type="collection">
+                <parameter key="name">count(*)</parameter>
+                <parameter key="display">true</parameter>
+                <parameter key="export">true</parameter>
+                <parameter key="order">true</parameter>
+                <parameter key="width"></parameter>
+                <parameter key="label"></parameter>
+                <parameter key="id">extModel9423-2</parameter>
+              </parameter>
+            </parameter>
+            <parameter key="niceName"></parameter>
+            <parameter key="group"></parameter>
+            <parameter key="groupIconClass"></parameter>
+            <parameter key="iconClass"></parameter>
+            <parameter key="menuShortcut">true</parameter>
+            <parameter key="reportClass"></parameter>
+            <parameter key="chartType">pie</parameter>
+            <parameter key="pieColumn">count(*)</parameter>
+            <parameter key="pieLabelColumn">null</parameter>
+            <parameter key="xAxis">null</parameter>
+            <parameter key="yAxis" type="collection"/>
+            <parameter key="modificationDate">1676026791</parameter>
+            <parameter key="creationDate">1676023990</parameter>
+            <parameter key="shareGlobally">true</parameter>
+            <parameter key="sharedUserNames" type="collection"/>
+            <parameter key="sharedRoleNames" type="collection"/>
+          </parameter>
+          <parameter key="new" type="collection">
+            <parameter key="name">new</parameter>
+            <parameter key="sql"></parameter>
+            <parameter key="dataSourceConfig" type="collection">
+              <parameter type="collection">
+                <parameter key="sql">count(*)</parameter>
+                <parameter key="from">object_1</parameter>
+                <parameter key="where"></parameter>
+                <parameter key="groupby">category</parameter>
+                <parameter key="type">sql</parameter>
+              </parameter>
+            </parameter>
+            <parameter key="columnConfiguration" type="collection">
+              <parameter type="collection">
+                <parameter key="name">count(*)</parameter>
+                <parameter key="display">true</parameter>
+                <parameter key="export">true</parameter>
+                <parameter key="order">true</parameter>
+                <parameter key="width"></parameter>
+                <parameter key="label"></parameter>
+                <parameter key="id">extModel344-1</parameter>
+              </parameter>
+            </parameter>
+            <parameter key="niceName"></parameter>
+            <parameter key="group"></parameter>
+            <parameter key="groupIconClass"></parameter>
+            <parameter key="iconClass"></parameter>
+            <parameter key="menuShortcut">true</parameter>
+            <parameter key="reportClass"></parameter>
+            <parameter key="chartType">pie</parameter>
+            <parameter key="pieColumn">count(*)</parameter>
+            <parameter key="pieLabelColumn">null</parameter>
+            <parameter key="xAxis">null</parameter>
+            <parameter key="yAxis" type="collection"/>
+            <parameter key="modificationDate">1676028909</parameter>
+            <parameter key="creationDate">1676028763</parameter>
+            <parameter key="shareGlobally">true</parameter>
+            <parameter key="sharedUserNames" type="collection"/>
+            <parameter key="sharedRoleNames" type="collection"/>
+          </parameter>
+        </parameter>
       </parameter>
       <parameter key="targeting" type="collection">
         <parameter key="data_providers" type="collection">
@@ -827,231 +908,6 @@
         <parameter key="admin_translation_mapping" type="collection"/>
         <parameter key="data_object" type="collection"/>
       </parameter>
-      <parameter key="workflows" type="collection">
-        <parameter key="workflow" type="collection">
-          <parameter key="label">Product Workflow</parameter>
-          <parameter key="type">state_machine</parameter>
-          <parameter key="supports" type="collection">
-            <parameter>Pimcore\Model\DataObject\Grocery</parameter>
-          </parameter>
-          <parameter key="places" type="collection">
-            <parameter key="base" type="collection">
-              <parameter key="label">Base Attributes</parameter>
-              <parameter key="color">#377ea9</parameter>
-              <parameter key="permissions" type="collection">
-                <parameter type="collection">
-                  <parameter key="objectLayout">1</parameter>
-                </parameter>
-              </parameter>
-              <parameter key="title"></parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-            </parameter>
-            <parameter key="features" type="collection">
-              <parameter key="label">features</parameter>
-              <parameter key="title">Updating content step</parameter>
-              <parameter key="color">#d9ef36</parameter>
-              <parameter key="permissions" type="collection">
-                <parameter type="collection">
-                  <parameter key="objectLayout">2</parameter>
-                </parameter>
-              </parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-            </parameter>
-            <parameter key="set manufacturer and seller" type="collection">
-              <parameter key="label">Update Manufacturer + Seller</parameter>
-              <parameter key="title">Update Manufacturer + Seller</parameter>
-              <parameter key="color">#d9ef36</parameter>
-              <parameter key="permissions" type="collection">
-                <parameter type="collection">
-                  <parameter key="objectLayout">4</parameter>
-                </parameter>
-              </parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-            </parameter>
-            <parameter key="media" type="collection">
-              <parameter key="label">media</parameter>
-              <parameter key="title">Image gallery</parameter>
-              <parameter key="color">#d9ef36</parameter>
-              <parameter key="permissions" type="collection">
-                <parameter type="collection">
-                  <parameter key="objectLayout">3</parameter>
-                </parameter>
-              </parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-            </parameter>
-            <parameter key="content_prepared" type="collection">
-              <parameter key="label">Content Prepared</parameter>
-              <parameter key="title">Content ready to publish</parameter>
-              <parameter key="color">#28a013</parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-              <parameter key="permissions" type="collection"/>
-            </parameter>
-            <parameter key="accepted" type="collection">
-              <parameter key="label">Accepted product</parameter>
-              <parameter key="color">#28a013</parameter>
-              <parameter key="title"></parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-              <parameter key="permissions" type="collection"/>
-            </parameter>
-            <parameter key="reject" type="collection">
-              <parameter key="label">Reject product</parameter>
-              <parameter key="color">#28a013</parameter>
-              <parameter key="title"></parameter>
-              <parameter key="colorInverted">false</parameter>
-              <parameter key="visibleInHeader">true</parameter>
-              <parameter key="permissions" type="collection"/>
-            </parameter>
-          </parameter>
-          <parameter key="transitions" type="collection">
-            <parameter key="add_base_attributes" type="collection">
-              <parameter key="from" type="collection">
-                <parameter>base</parameter>
-              </parameter>
-              <parameter key="to" type="collection">
-                <parameter>features</parameter>
-              </parameter>
-              <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_DATAENTRY') or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-              <parameter key="options" type="collection">
-                <parameter key="label">set features</parameter>
-                <parameter key="notes" type="collection">
-                  <parameter key="commentEnabled">true</parameter>
-                  <parameter key="commentRequired">true</parameter>
-                  <parameter key="type">Status update</parameter>
-                  <parameter key="additionalFields" type="collection"/>
-                </parameter>
-                <parameter key="objectLayout">false</parameter>
-                <parameter key="notificationSettings" type="collection"/>
-                <parameter key="changePublishedState">no_change</parameter>
-              </parameter>
-              <parameter key="name">add_base_attributes</parameter>
-            </parameter>
-            <parameter key="add_features" type="collection">
-              <parameter key="from" type="collection">
-                <parameter>media</parameter>
-              </parameter>
-              <parameter key="to" type="collection">
-                <parameter>set manufacturer and seller</parameter>
-              </parameter>
-              <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_DATAENTRY')  or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-              <parameter key="options" type="collection">
-                <parameter key="label">set manufacturer and seller</parameter>
-                <parameter key="notes" type="collection">
-                  <parameter key="commentEnabled">true</parameter>
-                  <parameter key="commentRequired">false</parameter>
-                  <parameter key="type">Status update</parameter>
-                  <parameter key="additionalFields" type="collection"/>
-                </parameter>
-                <parameter key="objectLayout">false</parameter>
-                <parameter key="notificationSettings" type="collection"/>
-                <parameter key="changePublishedState">no_change</parameter>
-              </parameter>
-              <parameter key="name">add_features</parameter>
-            </parameter>
-            <parameter key="add_mf_sl" type="collection">
-              <parameter key="from" type="collection">
-                <parameter>features</parameter>
-              </parameter>
-              <parameter key="to" type="collection">
-                <parameter>media</parameter>
-              </parameter>
-              <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_MEDIA')  or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-              <parameter key="options" type="collection">
-                <parameter key="label">set media</parameter>
-                <parameter key="notes" type="collection">
-                  <parameter key="commentEnabled">true</parameter>
-                  <parameter key="commentRequired">false</parameter>
-                  <parameter key="type">Status update</parameter>
-                  <parameter key="additionalFields" type="collection"/>
-                </parameter>
-                <parameter key="objectLayout">false</parameter>
-                <parameter key="notificationSettings" type="collection"/>
-                <parameter key="changePublishedState">no_change</parameter>
-              </parameter>
-              <parameter key="name">add_mf_sl</parameter>
-            </parameter>
-            <parameter key="add_media" type="collection">
-              <parameter key="from" type="collection">
-                <parameter>set manufacturer and seller</parameter>
-              </parameter>
-              <parameter key="to" type="collection">
-                <parameter>content_prepared</parameter>
-              </parameter>
-              <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_REVIEWER') or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-              <parameter key="options" type="collection">
-                <parameter key="label">prepare</parameter>
-                <parameter key="notes" type="collection">
-                  <parameter key="commentEnabled">true</parameter>
-                  <parameter key="commentRequired">false</parameter>
-                  <parameter key="type">Status update</parameter>
-                  <parameter key="additionalFields" type="collection"/>
-                </parameter>
-                <parameter key="objectLayout">false</parameter>
-                <parameter key="notificationSettings" type="collection"/>
-                <parameter key="changePublishedState">no_change</parameter>
-              </parameter>
-              <parameter key="name">add_media</parameter>
-            </parameter>
-            <parameter key="accept_transition" type="collection">
-              <parameter key="from" type="collection">
-                <parameter>content_prepared</parameter>
-              </parameter>
-              <parameter key="to" type="collection">
-                <parameter>accepted</parameter>
-              </parameter>
-              <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_REVIEWER')  or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-              <parameter key="options" type="collection">
-                <parameter key="label">accept</parameter>
-                <parameter key="notes" type="collection">
-                  <parameter key="commentEnabled">true</parameter>
-                  <parameter key="commentRequired">false</parameter>
-                  <parameter key="type">Status update</parameter>
-                  <parameter key="additionalFields" type="collection"/>
-                </parameter>
-                <parameter key="objectLayout">false</parameter>
-                <parameter key="notificationSettings" type="collection"/>
-                <parameter key="changePublishedState">no_change</parameter>
-              </parameter>
-              <parameter key="name">accept_transition</parameter>
-            </parameter>
-            <parameter key="reject_transition" type="collection">
-              <parameter key="from" type="collection">
-                <parameter>content_prepared</parameter>
-              </parameter>
-              <parameter key="to" type="collection">
-                <parameter>reject</parameter>
-              </parameter>
-              <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_REVIEWER') or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-              <parameter key="options" type="collection">
-                <parameter key="label">reject</parameter>
-                <parameter key="notes" type="collection">
-                  <parameter key="commentEnabled">true</parameter>
-                  <parameter key="commentRequired">false</parameter>
-                  <parameter key="type">Status update</parameter>
-                  <parameter key="additionalFields" type="collection"/>
-                </parameter>
-                <parameter key="objectLayout">false</parameter>
-                <parameter key="notificationSettings" type="collection"/>
-                <parameter key="changePublishedState">no_change</parameter>
-              </parameter>
-              <parameter key="name">reject_transition</parameter>
-            </parameter>
-          </parameter>
-          <parameter key="placeholders" type="collection"/>
-          <parameter key="enabled">true</parameter>
-          <parameter key="priority">0</parameter>
-          <parameter key="audit_trail" type="collection">
-            <parameter key="enabled">false</parameter>
-          </parameter>
-          <parameter key="initial_markings" type="collection"/>
-          <parameter key="globalActions" type="collection"/>
-        </parameter>
-      </parameter>
       <parameter key="general" type="collection">
         <parameter key="domain"></parameter>
         <parameter key="redirect_to_maindomain">false</parameter>
@@ -1116,6 +972,7 @@
         </parameter>
         <parameter key="usespecific">false</parameter>
       </parameter>
+      <parameter key="workflows" type="collection"/>
       <parameter key="httpclient" type="collection">
         <parameter key="adapter">Socket</parameter>
         <parameter key="proxy_host">null</parameter>
@@ -1177,231 +1034,7 @@
       <parameter>h5</parameter>
       <parameter>h6</parameter>
     </parameter>
-    <parameter key="pimcore.workflow" type="collection">
-      <parameter key="workflow" type="collection">
-        <parameter key="label">Product Workflow</parameter>
-        <parameter key="type">state_machine</parameter>
-        <parameter key="supports" type="collection">
-          <parameter>Pimcore\Model\DataObject\Grocery</parameter>
-        </parameter>
-        <parameter key="places" type="collection">
-          <parameter key="base" type="collection">
-            <parameter key="label">Base Attributes</parameter>
-            <parameter key="color">#377ea9</parameter>
-            <parameter key="permissions" type="collection">
-              <parameter type="collection">
-                <parameter key="objectLayout">1</parameter>
-              </parameter>
-            </parameter>
-            <parameter key="title"></parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-          </parameter>
-          <parameter key="features" type="collection">
-            <parameter key="label">features</parameter>
-            <parameter key="title">Updating content step</parameter>
-            <parameter key="color">#d9ef36</parameter>
-            <parameter key="permissions" type="collection">
-              <parameter type="collection">
-                <parameter key="objectLayout">2</parameter>
-              </parameter>
-            </parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-          </parameter>
-          <parameter key="set manufacturer and seller" type="collection">
-            <parameter key="label">Update Manufacturer + Seller</parameter>
-            <parameter key="title">Update Manufacturer + Seller</parameter>
-            <parameter key="color">#d9ef36</parameter>
-            <parameter key="permissions" type="collection">
-              <parameter type="collection">
-                <parameter key="objectLayout">4</parameter>
-              </parameter>
-            </parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-          </parameter>
-          <parameter key="media" type="collection">
-            <parameter key="label">media</parameter>
-            <parameter key="title">Image gallery</parameter>
-            <parameter key="color">#d9ef36</parameter>
-            <parameter key="permissions" type="collection">
-              <parameter type="collection">
-                <parameter key="objectLayout">3</parameter>
-              </parameter>
-            </parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-          </parameter>
-          <parameter key="content_prepared" type="collection">
-            <parameter key="label">Content Prepared</parameter>
-            <parameter key="title">Content ready to publish</parameter>
-            <parameter key="color">#28a013</parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-            <parameter key="permissions" type="collection"/>
-          </parameter>
-          <parameter key="accepted" type="collection">
-            <parameter key="label">Accepted product</parameter>
-            <parameter key="color">#28a013</parameter>
-            <parameter key="title"></parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-            <parameter key="permissions" type="collection"/>
-          </parameter>
-          <parameter key="reject" type="collection">
-            <parameter key="label">Reject product</parameter>
-            <parameter key="color">#28a013</parameter>
-            <parameter key="title"></parameter>
-            <parameter key="colorInverted">false</parameter>
-            <parameter key="visibleInHeader">true</parameter>
-            <parameter key="permissions" type="collection"/>
-          </parameter>
-        </parameter>
-        <parameter key="transitions" type="collection">
-          <parameter key="add_base_attributes" type="collection">
-            <parameter key="from" type="collection">
-              <parameter>base</parameter>
-            </parameter>
-            <parameter key="to" type="collection">
-              <parameter>features</parameter>
-            </parameter>
-            <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_DATAENTRY') or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-            <parameter key="options" type="collection">
-              <parameter key="label">set features</parameter>
-              <parameter key="notes" type="collection">
-                <parameter key="commentEnabled">true</parameter>
-                <parameter key="commentRequired">true</parameter>
-                <parameter key="type">Status update</parameter>
-                <parameter key="additionalFields" type="collection"/>
-              </parameter>
-              <parameter key="objectLayout">false</parameter>
-              <parameter key="notificationSettings" type="collection"/>
-              <parameter key="changePublishedState">no_change</parameter>
-            </parameter>
-            <parameter key="name">add_base_attributes</parameter>
-          </parameter>
-          <parameter key="add_features" type="collection">
-            <parameter key="from" type="collection">
-              <parameter>media</parameter>
-            </parameter>
-            <parameter key="to" type="collection">
-              <parameter>set manufacturer and seller</parameter>
-            </parameter>
-            <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_DATAENTRY')  or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-            <parameter key="options" type="collection">
-              <parameter key="label">set manufacturer and seller</parameter>
-              <parameter key="notes" type="collection">
-                <parameter key="commentEnabled">true</parameter>
-                <parameter key="commentRequired">false</parameter>
-                <parameter key="type">Status update</parameter>
-                <parameter key="additionalFields" type="collection"/>
-              </parameter>
-              <parameter key="objectLayout">false</parameter>
-              <parameter key="notificationSettings" type="collection"/>
-              <parameter key="changePublishedState">no_change</parameter>
-            </parameter>
-            <parameter key="name">add_features</parameter>
-          </parameter>
-          <parameter key="add_mf_sl" type="collection">
-            <parameter key="from" type="collection">
-              <parameter>features</parameter>
-            </parameter>
-            <parameter key="to" type="collection">
-              <parameter>media</parameter>
-            </parameter>
-            <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_MEDIA')  or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-            <parameter key="options" type="collection">
-              <parameter key="label">set media</parameter>
-              <parameter key="notes" type="collection">
-                <parameter key="commentEnabled">true</parameter>
-                <parameter key="commentRequired">false</parameter>
-                <parameter key="type">Status update</parameter>
-                <parameter key="additionalFields" type="collection"/>
-              </parameter>
-              <parameter key="objectLayout">false</parameter>
-              <parameter key="notificationSettings" type="collection"/>
-              <parameter key="changePublishedState">no_change</parameter>
-            </parameter>
-            <parameter key="name">add_mf_sl</parameter>
-          </parameter>
-          <parameter key="add_media" type="collection">
-            <parameter key="from" type="collection">
-              <parameter>set manufacturer and seller</parameter>
-            </parameter>
-            <parameter key="to" type="collection">
-              <parameter>content_prepared</parameter>
-            </parameter>
-            <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_REVIEWER') or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-            <parameter key="options" type="collection">
-              <parameter key="label">prepare</parameter>
-              <parameter key="notes" type="collection">
-                <parameter key="commentEnabled">true</parameter>
-                <parameter key="commentRequired">false</parameter>
-                <parameter key="type">Status update</parameter>
-                <parameter key="additionalFields" type="collection"/>
-              </parameter>
-              <parameter key="objectLayout">false</parameter>
-              <parameter key="notificationSettings" type="collection"/>
-              <parameter key="changePublishedState">no_change</parameter>
-            </parameter>
-            <parameter key="name">add_media</parameter>
-          </parameter>
-          <parameter key="accept_transition" type="collection">
-            <parameter key="from" type="collection">
-              <parameter>content_prepared</parameter>
-            </parameter>
-            <parameter key="to" type="collection">
-              <parameter>accepted</parameter>
-            </parameter>
-            <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_REVIEWER')  or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-            <parameter key="options" type="collection">
-              <parameter key="label">accept</parameter>
-              <parameter key="notes" type="collection">
-                <parameter key="commentEnabled">true</parameter>
-                <parameter key="commentRequired">false</parameter>
-                <parameter key="type">Status update</parameter>
-                <parameter key="additionalFields" type="collection"/>
-              </parameter>
-              <parameter key="objectLayout">false</parameter>
-              <parameter key="notificationSettings" type="collection"/>
-              <parameter key="changePublishedState">no_change</parameter>
-            </parameter>
-            <parameter key="name">accept_transition</parameter>
-          </parameter>
-          <parameter key="reject_transition" type="collection">
-            <parameter key="from" type="collection">
-              <parameter>content_prepared</parameter>
-            </parameter>
-            <parameter key="to" type="collection">
-              <parameter>reject</parameter>
-            </parameter>
-            <parameter key="guard">is_fully_authenticated() and (is_granted('ROLE_REVIEWER') or is_granted('ROLE_PIMCORE_ADMIN'))</parameter>
-            <parameter key="options" type="collection">
-              <parameter key="label">reject</parameter>
-              <parameter key="notes" type="collection">
-                <parameter key="commentEnabled">true</parameter>
-                <parameter key="commentRequired">false</parameter>
-                <parameter key="type">Status update</parameter>
-                <parameter key="additionalFields" type="collection"/>
-              </parameter>
-              <parameter key="objectLayout">false</parameter>
-              <parameter key="notificationSettings" type="collection"/>
-              <parameter key="changePublishedState">no_change</parameter>
-            </parameter>
-            <parameter key="name">reject_transition</parameter>
-          </parameter>
-        </parameter>
-        <parameter key="placeholders" type="collection"/>
-        <parameter key="enabled">true</parameter>
-        <parameter key="priority">0</parameter>
-        <parameter key="audit_trail" type="collection">
-          <parameter key="enabled">false</parameter>
-        </parameter>
-        <parameter key="initial_markings" type="collection"/>
-        <parameter key="globalActions" type="collection"/>
-      </parameter>
-    </parameter>
+    <parameter key="pimcore.workflow" type="collection"/>
     <parameter key="pimcore.gdpr-data-extrator.dataobjects" type="collection">
       <parameter key="classes" type="collection"/>
     </parameter>
@@ -1507,17 +1140,83 @@
       <parameter key="configurations" type="collection">
         <parameter key="csv" type="collection">
           <parameter key="general" type="collection">
+            <parameter key="active">true</parameter>
             <parameter key="type">dataImporterDataObject</parameter>
-            <parameter key="path">null</parameter>
             <parameter key="name">csv</parameter>
-            <parameter key="modificationDate">1676022018</parameter>
+            <parameter key="description"></parameter>
+            <parameter key="group"></parameter>
+            <parameter key="path">null</parameter>
+            <parameter key="modificationDate">1676206764</parameter>
             <parameter key="createDate">1676022018</parameter>
           </parameter>
-          <parameter key="workspaces" type="collection"/>
+          <parameter key="loaderConfig" type="collection">
+            <parameter key="type">asset</parameter>
+            <parameter key="settings" type="collection">
+              <parameter key="assetPath">/export.csv</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="interpreterConfig" type="collection">
+            <parameter key="type">csv</parameter>
+            <parameter key="settings" type="collection">
+              <parameter key="skipFirstRow">true</parameter>
+              <parameter key="delimiter">;</parameter>
+              <parameter key="enclosure">"</parameter>
+              <parameter key="escape">\</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="resolverConfig" type="collection">
+            <parameter key="elementType">dataObject</parameter>
+            <parameter key="dataObjectClassId" type="string">17</parameter>
+            <parameter key="loadingStrategy" type="collection">
+              <parameter key="type">notLoad</parameter>
+            </parameter>
+            <parameter key="createLocationStrategy" type="collection">
+              <parameter key="type">staticPath</parameter>
+              <parameter key="settings" type="collection">
+                <parameter key="path">/MasterData/category</parameter>
+              </parameter>
+            </parameter>
+            <parameter key="locationUpdateStrategy" type="collection">
+              <parameter key="type">noChange</parameter>
+            </parameter>
+            <parameter key="publishingStrategy" type="collection">
+              <parameter key="type">noChangeUnpublishNew</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="processingConfig" type="collection">
+            <parameter key="executionType">sequential</parameter>
+            <parameter key="doArchiveImportFile">true</parameter>
+            <parameter key="idDataIndex"></parameter>
+          </parameter>
+          <parameter key="mappingConfig" type="collection">
+            <parameter type="collection">
+              <parameter key="label" type="string">01</parameter>
+              <parameter key="dataSourceIndex" type="collection">
+                <parameter type="string">1</parameter>
+              </parameter>
+              <parameter key="transformationResultType">default</parameter>
+              <parameter key="dataTarget" type="collection">
+                <parameter key="type">direct</parameter>
+                <parameter key="settings" type="collection">
+                  <parameter key="fieldName">CategoryType</parameter>
+                  <parameter key="language"></parameter>
+                  <parameter key="writeIfTargetIsNotEmpty">true</parameter>
+                  <parameter key="writeIfSourceIsEmpty">true</parameter>
+                </parameter>
+              </parameter>
+              <parameter key="transformationPipeline" type="collection"/>
+            </parameter>
+          </parameter>
+          <parameter key="executionConfig" type="collection">
+            <parameter key="scheduleType">job</parameter>
+            <parameter key="cronDefinition"></parameter>
+            <parameter key="scheduledAt">12-02-2023 18:28</parameter>
+          </parameter>
           <parameter key="permissions" type="collection">
             <parameter key="user" type="collection"/>
             <parameter key="role" type="collection"/>
           </parameter>
+          <parameter key="workspaces" type="collection"/>
         </parameter>
       </parameter>
     </parameter>
@@ -1675,7 +1374,6 @@
       <parameter key="Pimcore\Bundle\DataImporterBundle\Controller\PushImportController">Pimcore\Bundle\DataImporterBundle\Controller\PushImportController</parameter>
       <parameter key="kernel">App\Kernel</parameter>
     </parameter>
-    <parameter key="workflow.has_guard_listeners">true</parameter>
     <parameter key="console.command.ids" type="collection">
       <parameter>console.command.public_alias.Pimcore\Bundle\CoreBundle\Command\Bundle\ListCommand</parameter>
       <parameter>console.command.public_alias.Pimcore\Bundle\CoreBundle\Command\CacheWarmingCommand</parameter>
@@ -3788,54 +3486,6 @@
         <argument type="collection">
           <argument type="service_closure" id="Pimcore\Bundle\DataImporterBundle\EventListener\DataImporterListener"/>
           <argument>importPrepared</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>workflow.workflow.guard.add_base_attributes</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="state_machine.workflow.listener.guard"/>
-          <argument>onTransition</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>workflow.workflow.guard.add_features</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="state_machine.workflow.listener.guard"/>
-          <argument>onTransition</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>workflow.workflow.guard.add_mf_sl</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="state_machine.workflow.listener.guard"/>
-          <argument>onTransition</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>workflow.workflow.guard.add_media</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="state_machine.workflow.listener.guard"/>
-          <argument>onTransition</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>workflow.workflow.guard.accept_transition</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="state_machine.workflow.listener.guard"/>
-          <argument>onTransition</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>workflow.workflow.guard.reject_transition</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="state_machine.workflow.listener.guard"/>
-          <argument>onTransition</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -9994,114 +9644,6 @@
       <argument type="service" id="Pimcore\Workflow\EventSubscriber\NotesSubscriber"/>
       <argument type="service" id="Pimcore\Workflow\ExpressionService"/>
       <argument type="service" id="debug.event_dispatcher"/>
-      <call method="registerWorkflow">
-        <argument>workflow</argument>
-        <argument type="collection">
-          <argument key="label">Product Workflow</argument>
-          <argument key="priority">0</argument>
-          <argument key="type">state_machine</argument>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>base</argument>
-        <argument type="collection">
-          <argument key="label">Base Attributes</argument>
-          <argument key="color">#377ea9</argument>
-          <argument key="permissions" type="collection">
-            <argument type="collection">
-              <argument key="objectLayout">1</argument>
-            </argument>
-          </argument>
-          <argument key="title"></argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>features</argument>
-        <argument type="collection">
-          <argument key="label">features</argument>
-          <argument key="title">Updating content step</argument>
-          <argument key="color">#d9ef36</argument>
-          <argument key="permissions" type="collection">
-            <argument type="collection">
-              <argument key="objectLayout">2</argument>
-            </argument>
-          </argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>set manufacturer and seller</argument>
-        <argument type="collection">
-          <argument key="label">Update Manufacturer + Seller</argument>
-          <argument key="title">Update Manufacturer + Seller</argument>
-          <argument key="color">#d9ef36</argument>
-          <argument key="permissions" type="collection">
-            <argument type="collection">
-              <argument key="objectLayout">4</argument>
-            </argument>
-          </argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>media</argument>
-        <argument type="collection">
-          <argument key="label">media</argument>
-          <argument key="title">Image gallery</argument>
-          <argument key="color">#d9ef36</argument>
-          <argument key="permissions" type="collection">
-            <argument type="collection">
-              <argument key="objectLayout">3</argument>
-            </argument>
-          </argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>content_prepared</argument>
-        <argument type="collection">
-          <argument key="label">Content Prepared</argument>
-          <argument key="title">Content ready to publish</argument>
-          <argument key="color">#28a013</argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-          <argument key="permissions" type="collection"/>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>accepted</argument>
-        <argument type="collection">
-          <argument key="label">Accepted product</argument>
-          <argument key="color">#28a013</argument>
-          <argument key="title"></argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-          <argument key="permissions" type="collection"/>
-        </argument>
-      </call>
-      <call method="addPlaceConfig">
-        <argument>workflow</argument>
-        <argument>reject</argument>
-        <argument type="collection">
-          <argument key="label">Reject product</argument>
-          <argument key="color">#28a013</argument>
-          <argument key="title"></argument>
-          <argument key="colorInverted">false</argument>
-          <argument key="visibleInHeader">true</argument>
-          <argument key="permissions" type="collection"/>
-        </argument>
-      </call>
     </service>
     <service id="Pimcore\Workflow\Place\StatusInfo" class="Pimcore\Workflow\Place\StatusInfo" public="true" autowire="true" autoconfigure="true">
       <argument type="service" id="Pimcore\Workflow\Manager"/>
@@ -16597,179 +16139,9 @@
       <argument>null</argument>
       <argument>null</argument>
     </service>
-    <service id="workflow.registry" class="Symfony\Component\Workflow\Registry" autowire="true" autoconfigure="true">
-      <call method="addWorkflow">
-        <argument type="service" id="state_machine.workflow"/>
-        <argument type="service">
-          <service class="Symfony\Component\Workflow\SupportStrategy\InstanceOfSupportStrategy">
-            <argument>Pimcore\Model\DataObject\Grocery</argument>
-          </service>
-        </argument>
-      </call>
-    </service>
+    <service id="workflow.registry" class="Symfony\Component\Workflow\Registry" autowire="true" autoconfigure="true"/>
     <service id="workflow.security.expression_language" class="Symfony\Component\Workflow\EventListener\ExpressionLanguage" autowire="true" autoconfigure="true">
       <argument type="service" id="cache.app"/>
-    </service>
-    <service id="state_machine.workflow" class="Symfony\Component\Workflow\StateMachine" public="true" autowire="true">
-      <argument type="service" id="state_machine.workflow.definition"/>
-      <argument type="service">
-        <service class="Pimcore\Workflow\MarkingStore\StateTableMarkingStore" autowire="true">
-          <argument>workflow</argument>
-        </service>
-      </argument>
-      <argument type="service" id="debug.event_dispatcher"/>
-      <argument>workflow</argument>
-      <argument>null</argument>
-    </service>
-    <service id="state_machine.workflow.definition" class="Symfony\Component\Workflow\Definition">
-      <tag name="workflow" type="state_machine" marking_store="state_table">workflow.definition</tag>
-      <argument type="collection">
-        <argument>base</argument>
-        <argument>features</argument>
-        <argument>set manufacturer and seller</argument>
-        <argument>media</argument>
-        <argument>content_prepared</argument>
-        <argument>accepted</argument>
-        <argument>reject</argument>
-      </argument>
-      <argument type="collection">
-        <argument type="service">
-          <service class="Pimcore\Workflow\Transition">
-            <argument>add_base_attributes</argument>
-            <argument>base</argument>
-            <argument>features</argument>
-            <argument type="collection">
-              <argument key="label">set features</argument>
-              <argument key="notes" type="collection">
-                <argument key="commentEnabled">true</argument>
-                <argument key="commentRequired">true</argument>
-                <argument key="type">Status update</argument>
-                <argument key="additionalFields" type="collection"/>
-              </argument>
-              <argument key="objectLayout">false</argument>
-              <argument key="notificationSettings" type="collection"/>
-              <argument key="changePublishedState">no_change</argument>
-            </argument>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Pimcore\Workflow\Transition">
-            <argument>add_features</argument>
-            <argument>media</argument>
-            <argument>set manufacturer and seller</argument>
-            <argument type="collection">
-              <argument key="label">set manufacturer and seller</argument>
-              <argument key="notes" type="collection">
-                <argument key="commentEnabled">true</argument>
-                <argument key="commentRequired">false</argument>
-                <argument key="type">Status update</argument>
-                <argument key="additionalFields" type="collection"/>
-              </argument>
-              <argument key="objectLayout">false</argument>
-              <argument key="notificationSettings" type="collection"/>
-              <argument key="changePublishedState">no_change</argument>
-            </argument>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Pimcore\Workflow\Transition">
-            <argument>add_mf_sl</argument>
-            <argument>features</argument>
-            <argument>media</argument>
-            <argument type="collection">
-              <argument key="label">set media</argument>
-              <argument key="notes" type="collection">
-                <argument key="commentEnabled">true</argument>
-                <argument key="commentRequired">false</argument>
-                <argument key="type">Status update</argument>
-                <argument key="additionalFields" type="collection"/>
-              </argument>
-              <argument key="objectLayout">false</argument>
-              <argument key="notificationSettings" type="collection"/>
-              <argument key="changePublishedState">no_change</argument>
-            </argument>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Pimcore\Workflow\Transition">
-            <argument>add_media</argument>
-            <argument>set manufacturer and seller</argument>
-            <argument>content_prepared</argument>
-            <argument type="collection">
-              <argument key="label">prepare</argument>
-              <argument key="notes" type="collection">
-                <argument key="commentEnabled">true</argument>
-                <argument key="commentRequired">false</argument>
-                <argument key="type">Status update</argument>
-                <argument key="additionalFields" type="collection"/>
-              </argument>
-              <argument key="objectLayout">false</argument>
-              <argument key="notificationSettings" type="collection"/>
-              <argument key="changePublishedState">no_change</argument>
-            </argument>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Pimcore\Workflow\Transition">
-            <argument>accept_transition</argument>
-            <argument>content_prepared</argument>
-            <argument>accepted</argument>
-            <argument type="collection">
-              <argument key="label">accept</argument>
-              <argument key="notes" type="collection">
-                <argument key="commentEnabled">true</argument>
-                <argument key="commentRequired">false</argument>
-                <argument key="type">Status update</argument>
-                <argument key="additionalFields" type="collection"/>
-              </argument>
-              <argument key="objectLayout">false</argument>
-              <argument key="notificationSettings" type="collection"/>
-              <argument key="changePublishedState">no_change</argument>
-            </argument>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Pimcore\Workflow\Transition">
-            <argument>reject_transition</argument>
-            <argument>content_prepared</argument>
-            <argument>reject</argument>
-            <argument type="collection">
-              <argument key="label">reject</argument>
-              <argument key="notes" type="collection">
-                <argument key="commentEnabled">true</argument>
-                <argument key="commentRequired">false</argument>
-                <argument key="type">Status update</argument>
-                <argument key="additionalFields" type="collection"/>
-              </argument>
-              <argument key="objectLayout">false</argument>
-              <argument key="notificationSettings" type="collection"/>
-              <argument key="changePublishedState">no_change</argument>
-            </argument>
-          </service>
-        </argument>
-      </argument>
-    </service>
-    <service id="state_machine.workflow.listener.guard" class="Symfony\Component\Workflow\EventListener\GuardListener">
-      <tag name="kernel.event_listener" event="workflow.workflow.guard.add_base_attributes" method="onTransition"/>
-      <tag name="kernel.event_listener" event="workflow.workflow.guard.add_features" method="onTransition"/>
-      <tag name="kernel.event_listener" event="workflow.workflow.guard.add_mf_sl" method="onTransition"/>
-      <tag name="kernel.event_listener" event="workflow.workflow.guard.add_media" method="onTransition"/>
-      <tag name="kernel.event_listener" event="workflow.workflow.guard.accept_transition" method="onTransition"/>
-      <tag name="kernel.event_listener" event="workflow.workflow.guard.reject_transition" method="onTransition"/>
-      <argument type="collection">
-        <argument key="workflow.workflow.guard.add_base_attributes">is_fully_authenticated() and (is_granted('ROLE_DATAENTRY') or is_granted('ROLE_PIMCORE_ADMIN'))</argument>
-        <argument key="workflow.workflow.guard.add_features">is_fully_authenticated() and (is_granted('ROLE_DATAENTRY')  or is_granted('ROLE_PIMCORE_ADMIN'))</argument>
-        <argument key="workflow.workflow.guard.add_mf_sl">is_fully_authenticated() and (is_granted('ROLE_MEDIA')  or is_granted('ROLE_PIMCORE_ADMIN'))</argument>
-        <argument key="workflow.workflow.guard.add_media">is_fully_authenticated() and (is_granted('ROLE_REVIEWER') or is_granted('ROLE_PIMCORE_ADMIN'))</argument>
-        <argument key="workflow.workflow.guard.accept_transition">is_fully_authenticated() and (is_granted('ROLE_REVIEWER')  or is_granted('ROLE_PIMCORE_ADMIN'))</argument>
-        <argument key="workflow.workflow.guard.reject_transition">is_fully_authenticated() and (is_granted('ROLE_REVIEWER') or is_granted('ROLE_PIMCORE_ADMIN'))</argument>
-      </argument>
-      <argument type="service" id="workflow.security.expression_language"/>
-      <argument type="service" id="security.token_storage"/>
-      <argument type="service" id="security.authorization_checker"/>
-      <argument type="service" id="scheb_two_factor.security.authentication.trust_resolver"/>
-      <argument type="service" id="security.role_hierarchy"/>
-      <argument type="service" id="debug.validator" on-invalid="null"/>
     </service>
     <service id=".service_locator.yY.p4P7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>

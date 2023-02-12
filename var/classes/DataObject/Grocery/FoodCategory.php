@@ -6,51 +6,8 @@ use Pimcore\Model\DataObject\Exception\InheritanceParentNotFoundException;
 
 class FoodCategory extends \Pimcore\Model\DataObject\Objectbrick {
 
-protected $brickGetters = ['RiceAndRiceProducts','Baking','Biscuits','ChocolateSweet','Coffee','DalAndPules','GheeAndOils','JamsHoney','Juices','Namkeen','Pasta','Spreads','SugarJaggeryAndSalt','Tea','Water'];
+protected $brickGetters = ['Baking','Biscuits','ChocolateSweet','Coffee','DalAndPules','GheeAndOils','JamsHoney','Juices','Namkeen','Pasta','RiceAndRiceProducts','Spreads','SugarJaggeryAndSalt','Tea','Water'];
 
-
-protected $RiceAndRiceProducts = null;
-
-/**
-* @return \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts|null
-*/
-public function getRiceAndRiceProducts(bool $includeDeletedBricks = false)
-{
-	if(!$this->RiceAndRiceProducts && \Pimcore\Model\DataObject::doGetInheritedValues($this->getObject())) { 
-		try {
-			$brickContainer = $this->getObject()->getValueFromParent("FoodCategory");
-			if(!empty($brickContainer)) {
-				//check if parent object has brick, and if so, create an empty brick to enable inheritance
-				$parentBrick = $this->getObject()->getValueFromParent("FoodCategory")->getRiceAndRiceProducts($includeDeletedBricks);
-				if (!empty($parentBrick)) {
-					$brickType = "\\Pimcore\\Model\\DataObject\\Objectbrick\\Data\\" . ucfirst($parentBrick->getType());
-					$brick = new $brickType($this->getObject());
-					$brick->setFieldname("FoodCategory");
-					$this->setRiceAndRiceProducts($brick);
-					return $brick;
-				}
-			}
-		} catch (InheritanceParentNotFoundException $e) {
-			// no data from parent available, continue ...
-		}
-	}
-	if(!$includeDeletedBricks &&
-		isset($this->RiceAndRiceProducts) &&
-		$this->RiceAndRiceProducts->getDoDelete()) {
-			return null;
-	}
-	return $this->RiceAndRiceProducts;
-}
-
-/**
-* @param \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts $RiceAndRiceProducts
-* @return \Pimcore\Model\DataObject\Grocery\FoodCategory
-*/
-public function setRiceAndRiceProducts($RiceAndRiceProducts)
-{
-	$this->RiceAndRiceProducts = $RiceAndRiceProducts;
-	return $this;
-}
 
 protected $Baking = null;
 
@@ -479,6 +436,49 @@ public function getPasta(bool $includeDeletedBricks = false)
 public function setPasta($Pasta)
 {
 	$this->Pasta = $Pasta;
+	return $this;
+}
+
+protected $RiceAndRiceProducts = null;
+
+/**
+* @return \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts|null
+*/
+public function getRiceAndRiceProducts(bool $includeDeletedBricks = false)
+{
+	if(!$this->RiceAndRiceProducts && \Pimcore\Model\DataObject::doGetInheritedValues($this->getObject())) { 
+		try {
+			$brickContainer = $this->getObject()->getValueFromParent("FoodCategory");
+			if(!empty($brickContainer)) {
+				//check if parent object has brick, and if so, create an empty brick to enable inheritance
+				$parentBrick = $this->getObject()->getValueFromParent("FoodCategory")->getRiceAndRiceProducts($includeDeletedBricks);
+				if (!empty($parentBrick)) {
+					$brickType = "\\Pimcore\\Model\\DataObject\\Objectbrick\\Data\\" . ucfirst($parentBrick->getType());
+					$brick = new $brickType($this->getObject());
+					$brick->setFieldname("FoodCategory");
+					$this->setRiceAndRiceProducts($brick);
+					return $brick;
+				}
+			}
+		} catch (InheritanceParentNotFoundException $e) {
+			// no data from parent available, continue ...
+		}
+	}
+	if(!$includeDeletedBricks &&
+		isset($this->RiceAndRiceProducts) &&
+		$this->RiceAndRiceProducts->getDoDelete()) {
+			return null;
+	}
+	return $this->RiceAndRiceProducts;
+}
+
+/**
+* @param \Pimcore\Model\DataObject\Objectbrick\Data\RiceAndRiceProducts $RiceAndRiceProducts
+* @return \Pimcore\Model\DataObject\Grocery\FoodCategory
+*/
+public function setRiceAndRiceProducts($RiceAndRiceProducts)
+{
+	$this->RiceAndRiceProducts = $RiceAndRiceProducts;
 	return $this;
 }
 
