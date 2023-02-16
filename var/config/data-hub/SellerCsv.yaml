@@ -1,0 +1,75 @@
+pimcore_data_hub:
+    configurations:
+        SellerCsv:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: SellerCsv
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1676456611
+                createDate: 1676455914
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: '/sellerexport .csv'
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ;
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: '3'
+                loadingStrategy:
+                    type: notLoad
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /MasterData/Seller
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangeUnpublishNew
+            processingConfig:
+                executionType: sequential
+                doArchiveImportFile: true
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: Seller
+                    dataSourceIndex:
+                        - '5'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: SellerId
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: name
+                    dataSourceIndex:
+                        - '6'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: SellerName
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: job
+                cronDefinition: ''
+                scheduledAt: '15-02-2023 15:48'
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }

@@ -1,0 +1,61 @@
+pimcore_data_hub:
+    configurations:
+        Seller:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: Seller
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1676460881
+                createDate: 1676460698
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: '/sellerexport .csv'
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ;
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: '3'
+                loadingStrategy:
+                    type: notLoad
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangeUnpublishNew
+            processingConfig:
+                executionType: sequential
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: 'new column'
+                    dataSourceIndex:
+                        - '5'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: SellerId
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: job
+                cronDefinition: ''
+                scheduledAt: '15-02-2023 17:00'
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }

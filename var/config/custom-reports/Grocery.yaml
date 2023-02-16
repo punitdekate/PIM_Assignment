@@ -1,0 +1,56 @@
+pimcore:
+    custom_report:
+        definitions:
+            Grocery:
+                name: Grocery
+                sql: ''
+                dataSourceConfig:
+                    -
+                        sql: 'Brands,Count(*),fullname'
+                        from: object_18
+                        where: ''
+                        groupby: 'Brands,Category'
+                        type: sql
+                columnConfiguration:
+                    -
+                        name: 'Count(*)'
+                        display: true
+                        export: true
+                        order: true
+                        width: ''
+                        label: ''
+                        id: extModel1081-5
+                    -
+                        name: Brands
+                        display: true
+                        export: true
+                        order: true
+                        width: ''
+                        label: ''
+                        id: extModel1081-6
+                    -
+                        name: fullname
+                        display: true
+                        export: true
+                        order: true
+                        width: ''
+                        label: ''
+                        id: extModel1081-7
+                niceName: ''
+                group: ''
+                groupIconClass: ''
+                iconClass: ''
+                menuShortcut: true
+                reportClass: ''
+                chartType: pie
+                pieColumn: 'Count(*)'
+                pieLabelColumn: Brands
+                xAxis: 'Count(*)'
+                yAxis:
+                    - 'Count(*)'
+                modificationDate: 1676447250
+                creationDate: 1676356586
+                shareGlobally: true
+                sharedUserNames:
+                    - admin
+                sharedRoleNames: {  }

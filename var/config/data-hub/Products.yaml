@@ -1,0 +1,113 @@
+pimcore_data_hub:
+    configurations:
+        Products:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: Products
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1676465659
+                createDate: 1676464912
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: '/export (5).csv'
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ;
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: '18'
+                loadingStrategy:
+                    type: notLoad
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /csv
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangeUnpublishNew
+            processingConfig:
+                executionType: sequential
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: SKU
+                    dataSourceIndex:
+                        - '5'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: SKU
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: Brands
+                    dataSourceIndex:
+                        - '6'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Brands
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: FoodType
+                    dataSourceIndex:
+                        - '7'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: FoodType
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: bakingid
+                    dataSourceIndex:
+                        - '11'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: FoodCategory.Baking.itemid
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: 'baking flavour'
+                    dataSourceIndex:
+                        - '13'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: FoodCategory.Baking.flavour
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: job
+                cronDefinition: ''
+                scheduledAt: '15-02-2023 18:17'
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
