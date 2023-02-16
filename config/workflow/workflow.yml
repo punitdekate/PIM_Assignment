@@ -86,9 +86,9 @@ pimcore:
                     guard: "is_fully_authenticated() and (is_granted('ROLE_DATAENTRY') or is_granted('ROLE_PIMCORE_ADMIN'))"
                     options:
                         label: "prepare"
-                        notes:
-                            commentEnabled: true
-                            commentRequired: false
+                        # notes:
+                        #     commentEnabled: true
+                        #     commentRequired: false
 
                 accept_transition:
                     from: content_prepared
